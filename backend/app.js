@@ -83,7 +83,7 @@ app.use('/api/products', productRouter);
 app.use('/api/banner', bannerRouter);
 app.use(cors(
     {
-      origin: 'https://frontend-react-api.vercel.app/',
+      origin: 'https://frontend-react-api.vercel.app',
       methods: ["GET","POST","PUT","PATCH","DELETE"],
       credentials: true,
     }
