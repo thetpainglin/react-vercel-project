@@ -46,14 +46,15 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 /*
 *
-* {
-      origin : [],
-      method : ["POST","GET","PUT","PATCH"],
-      credentials : true
+* 
+    {
+      origin: 'https://frontend-react-api.vercel.app',
+      methods: ["GET","POST","PUT","PATCH","DELETE"],
+      credentials: true,
     }
 * */
 
-
+app.use(cors());
 
 mongoose.connect(db,{
   useNewUrlParser : true,
@@ -81,13 +82,7 @@ app.use('/', indexRouter);
 */}
 app.use('/api/products', productRouter);
 app.use('/api/banner', bannerRouter);
-app.use(cors(
-    {
-      origin: 'https://frontend-react-api.vercel.app',
-      methods: ["GET","POST","PUT","PATCH","DELETE"],
-      credentials: true,
-    }
-));
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
