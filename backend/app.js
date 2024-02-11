@@ -55,6 +55,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 * */
 
 app.use(cors());
+app.options('*',cors());
 
 mongoose.connect(db,{
   useNewUrlParser : true,
