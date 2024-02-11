@@ -54,7 +54,13 @@ app.use(express.static(path.join(__dirname, 'public')));
     }
 * */
 
-app.use(cors());
+app.use(cors(
+{
+  "origin": "*",
+  "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
+  "preflightContinue": false
+}
+));
 app.options('*',cors());
 
 mongoose.connect(db,{
