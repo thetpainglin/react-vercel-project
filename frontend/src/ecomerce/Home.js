@@ -23,7 +23,7 @@ export default function Home(props){
            <HeroBanner bannerData={getAllBanner}/>
            <div className="products-heading">
                <h2>Best Selling Products</h2>
-               <p>Speakers of many variations</p>
+               <p>The best products of many variations</p>
            </div>
 
             <div className="products-container">
