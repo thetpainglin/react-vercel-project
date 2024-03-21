@@ -106,7 +106,7 @@ app.use("/", indexRouter);
 app.use("/api/products", productRouter);
 app.use("/api/banner", bannerRouter);
 
-app.use("/email-send", emailRouter);
+app.use("/api/email-send", emailRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
