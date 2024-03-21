@@ -5,14 +5,8 @@ const nodemailer = require("nodemailer");
 
 /* GET users listing. */
 router.post("/", (req, res) => {
-  const formData = req.body;
 
-  console.log("email data got => ", formData);
-
-  const emailUser = "zeroheromrthet@gmail.com";
-  const emailPass = "cowzfeuqphgpnexl";
-
-  res.setHeader("Access-Control-Allow-Credentials", true);
+   res.setHeader("Access-Control-Allow-Credentials", true);
   res.setHeader("Access-Control-Allow-Origin", "*");
   // another common pattern
   // res.setHeader('Access-Control-Allow-Origin', req.headers.origin);
@@ -24,6 +18,15 @@ router.post("/", (req, res) => {
     "Access-Control-Allow-Headers",
     "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
   );
+  
+  const formData = req.body;
+
+  console.log("email data got => ", formData);
+
+  const emailUser = "zeroheromrthet@gmail.com";
+  const emailPass = "cowzfeuqphgpnexl";
+
+ 
 
   const transporter = nodemailer.createTransport({
     service: "gmail",
