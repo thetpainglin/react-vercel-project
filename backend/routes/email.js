@@ -4,7 +4,7 @@ var router = express.Router();
 const nodemailer = require("nodemailer");
 
 /* GET users listing. */
-router.post("/", (req, res) => {
+router.post("/", async function(req,res,next) {
 
    res.setHeader("Access-Control-Allow-Credentials", true);
   res.setHeader("Access-Control-Allow-Origin", "*");
