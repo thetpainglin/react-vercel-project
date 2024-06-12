@@ -30,8 +30,6 @@ let indexRouter = require("./routes/index");
 }
 let productRouter = require("./Ecomerce_Project/route/productRouter");
 let bannerRouter = require("./Ecomerce_Project/route/bannerRouter");
-
-let emailRouter = require("./routes/email");
 //const {entry} = require("react-circle-slider/webpack.config");
 
 var app = express();
@@ -105,8 +103,6 @@ app.use("/", indexRouter);
 }
 app.use("/api/products", productRouter);
 app.use("/api/banner", bannerRouter);
-
-app.use("/api/email-send", emailRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
