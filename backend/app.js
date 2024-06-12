@@ -55,21 +55,26 @@ app.use(express.static(path.join(__dirname, "public")));
 * */
 
 app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3006');
+  res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
   res.setHeader('Access-Control-Allow-Credentials', true);
   next();
 });
 
-app.use(
-  cors({
-    origin: "*",
-    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-    preflightContinue: false,
-  })
-);
-app.options("*", cors());
+// app.use(
+//   cors({
+//     origin: "*",
+//     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+//     preflightContinue: false,
+//   })
+// );
+// app.options("*", cors());
+
+app.use(cors({
+  origin: 'https://thetpainglin-mern-project.vercel.app', // Replace with your frontend URL
+  credentials: true, // If you're sending cookies or authorization headers
+}));
 
 mongoose
   .connect(db, {
